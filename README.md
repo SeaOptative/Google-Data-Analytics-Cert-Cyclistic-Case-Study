@@ -4,6 +4,8 @@ This repository presents a capstone project derived from the Google Data Analyti
 
 To go straight to the PowerPoint presentation, click [HERE](./presentation/powerpoint_presentation.md)
 
+To view Pivot Table Analysis, click [HERE](./cyclistic_case_study/pivot_table_analysis.md)
+
 ## Certification of Completion
 ![Certificate of Completion 1](./cert_capstone.png)
 
