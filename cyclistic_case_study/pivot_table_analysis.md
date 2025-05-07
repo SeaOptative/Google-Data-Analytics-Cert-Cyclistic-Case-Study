@@ -5,7 +5,7 @@ In this project, I used Excel Pivot Tables to find cool trends and patterns hidd
 
 This presentation shows you how Pivot Tables can be super useful for quickly and easily exploring data. It’s perfect for early-stage data analysis or when you need quick business intelligence. Even simple tools can give you valuable insights and help you make better decisions.
 
-This pivot table analysis shows the average ride length and count of rides for each day of the week, including the average ride length and maximum ride length for casual and member riders from December 2023 through November 2024.
+This pivot table analysis shows the average ride length and number of rides for each day of the week, from December 2023 to November 2024. It also includes the average ride length and maximum ride length for both casual and member riders.
 
 Here is a screenshot of all 12 months' quick analysis I got using Pivot Table: 
 
