@@ -10,13 +10,13 @@ To support future growth, Cyclistic's strategy has shifted toward converting cas
 
 ### Background
 
-A bike-share program that features more than 5,800 bicycles and 600 docking stations. Cyclistic sets itself apart by also offering reclining bikes, hand tricycles, and cargo bikes, making bike-share more inclusive to people with disabilities and riders who can't use a standard two-wheeled bike. The majority of riders opt for traditional bikes; about 8% of riders use the assistive options. Cyclistic users are more likely to ride for leisure, but about 30% use them to commute to work each day.
+Cyclistic distinguishes itself by providing an inclusive range of bicycles, including reclining bikes, hand tricycles, and cargo bikes, catering to individuals with disabilities and those who cannot operate a conventional two-wheeled bicycle. While the majority of riders favor traditional bicycles, approximately 8% utilize the assistive options. Cyclistic users predominantly engage in recreational cycling, with a significant portion (30%) employing them for daily commuting purposes.
 
-Moreno (Director of Marketing) has set a clear goal: Design marketing strategies aimed at converting casual riders into annual members. To do that, however, the marketing analyst team needs to better understand how annual members and casual riders differ, why casual riders would buy a membership, and how digital media could affect their marketing tactics. Moreno and her team are interested in analyzing the Cyclistic historical bike trip data to identify trends.
+Moreno, the marketing director, has a big goal: she wants to turn casual riders into annual members. To do that, her marketing team needs to figure out how annual members and casual riders are different, why casual riders would buy a membership, and how digital media could affect their marketing. Moreno and her team are excited to dive into the Cyclistic historical bike trip data to find some trends.
 
 ### Analysis
 
-To analyze the usage pattern of casual and annual members, historical data has been fetched from this [link](https://divvy-tripdata.s3.amazonaws.com/index.html). This URL consists of 12 months' data of rides of both annual and casual members.
+Historical data has been fetched from this to analyze the usage pattern of both casual and annual members. [link](https://divvy-tripdata.s3.amazonaws.com/index.html). This URL consists of 12 months' data of rides of both annual and casual members.
 
 ### My Badge
 ![cert](./prof-cert.png)
