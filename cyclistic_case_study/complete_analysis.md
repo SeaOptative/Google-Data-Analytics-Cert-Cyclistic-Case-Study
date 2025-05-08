@@ -164,7 +164,7 @@ GROUP BY members_casual, rideable_type
 
 ### Most frequently used stations for starting and ending rides. 
 
-* Top 10 start station
+* **Top 10 start station**
 ```{sql eval=FALSE, include=FALSE}
 SELECT start_station_name, COUNT(*) AS total_rides
 FROM "full_year"
@@ -176,7 +176,7 @@ LIMIT 10;
 
 ![Image: Top 10 Start](./screenshots/top_10_start.png)
 
-* Top 10 end station
+* **Top 10 end station**
   
 ```{sql eval=FALSE, include=FALSE}
 SELECT end_station_name, COUNT(*) AS total_rides
@@ -189,7 +189,7 @@ LIMIT 10;
 
 ![Image: Top 10 End](./screenshots/top_10_end.png)
 
-* Most popular start stations for casual riders
+* **Most popular start stations for casual riders**
 
 ```{sql eval=FALSE, include=FALSE}
 SELECT 
@@ -205,7 +205,7 @@ LIMIT 10;
 
 ![Image: Popular Casual](./screenshots/pop_stat_mem.png)
 
-* Most popular start stations for member riders
+* **Most popular start stations for member riders**
 
 ```{sql eval=FALSE, include=FALSE}
 SELECT 
@@ -222,7 +222,7 @@ LIMIT 10;
 ![Image: Popular Member](./screenshots/pop_stat_rider.png)
 
 
-* Most frequent routes start - end station
+* **Most frequent routes start - end station**
 
 ```{sql eval=FALSE, include=FALSE}
 SELECT
@@ -241,15 +241,15 @@ LIMIT 10;
 
 
 ## Most frequent bike type 
-* Classic bike
+* **Classic bike**
 
 ![Image: Classic bike](./screenshots/class_bike.png)
 
-* Electric bike
+* **Electric bike**
 
 ![Image: Electric bike](./screenshots/elect_bike.png)
 
-* Classic Bike VS Electric Bike
+* **Classic Bike VS Electric Bike**
 
 ![Image: Classic VS Electric bike](./screenshots/class_vs_elect_bike.png)
 
