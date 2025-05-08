@@ -3,7 +3,7 @@
 
 1. [Introduction](complete_analysis.md#introduction)
 2. [Business Task and Stakeholders](complete_analysis.md#business-task)
-3. [Data Collection and Preparation)](complete_analysis.md#data-collection-and-preparation)
+3. [Data Collection and Preparation](complete_analysis.md#data-collection-and-preparation)
 4. [Data Processing and Cleaning](complete_analysis.md#data-processing-and-cleaning)
 5. [Analysis](complete_analysis.md#analysis)
 6. [Summary and Recommendations](complete_analysis.md#summary)
