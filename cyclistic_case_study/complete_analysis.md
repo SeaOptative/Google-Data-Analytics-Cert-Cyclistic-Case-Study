@@ -3,8 +3,8 @@
 
 1. [Introduction](complete_analysis.md#introduction)
 2. [Business Task and Stakeholders](complete_analysis.md#business-task)
-3. [Data (Collection and Preparation)](complete_analysis.md#data(collection-and-preparation))
-4. [Data: Processing and Cleaning](complete_analysis.md#processing-and-cleaning)
+3. [Data Collection and Preparation)](complete_analysis.md#data-collection-and-preparation))
+4. [Data Processing and Cleaning](complete_analysis.md#data-processing-and-cleaning)
 5. [Analysis](complete_analysis.md#analysis)
 6. [Summary and Recommendations](complete_analysis.md#summary)
 7. [Conclusion](complete_analysis.md#conclusion)
@@ -12,7 +12,7 @@
 
 ## Introduction
 
- Chicago-based Cyclistic is a bike-share firm that provides full-access annual subscriptions and single-ride passes. A significant percentage of riders are casual users who buy single-ride or day passes, even though yearly members offer a more reliable source of income. The primary business goal is to increase annual memberships by converting casual riders into members.
+ Chicago-based Cyclistic is a bike-share firm that provides full-access annual subscriptions and single-ride passes. A significant percentage of riders are casual users who buy single-ride or day passes, even though yearly memberships offer a more reliable source of income. The primary business goal is to increase annual memberships by converting casual riders into members.
  
 ## Business Task and Stakeholders
 
@@ -33,7 +33,7 @@ The insights gained from this analysis will help Cyclistic’s marketing team de
 4.	What trend can help influence marketing strategies? 
 
 
-## Data: Collection and Preparation
+## Data Collection and Preparation
 * **Source:**  [Cyclistic historical trip data](https://divvy-tripdata.s3.amazonaws.com/index.html) has been made available by Motivate International Inc. and has been protected under the data-privacy license mentioned here: [license](https://ride.divvybikes.com/data-license-agreement).
 * The data range used for this study and analysis was December 2023–November 2024.
 * This publicly available dataset can be used for studying the usage of Cyclistic bikes by various customer types. We are unable to link pass purchases to credit card numbers since users are prohibited from using riders' personally identifiable information due to data privacy concerns.
@@ -48,7 +48,7 @@ The insights gained from this analysis will help Cyclistic’s marketing team de
 * The member_casual column contains membership information, which is Member or Casual.
 
 
-## Data: Processing and Cleaning
+## Data Processing and Cleaning
 
 ### Tools Used
 
