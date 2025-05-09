@@ -4,11 +4,11 @@ This repository presents a capstone project derived from the Google Data Analyti
 
 The insights gained from this analysis will empower Cyclistic’s marketing team to devise targeted strategies to encourage casual riders to subscribe to annual memberships. This strategic approach will contribute to enhancing customer retention and, consequently, revenue generation. This project involves using key Analytical steps of Ask, Prepare, Process, Analyze, Share, and Act. 
 
+**Do you want to dive straight into the Analysis? click [HERE](./cyclistic_case_study/complete_analysis.md)**
+
 **To go straight to the PowerPoint presentation, click [HERE](./presentation/powerpoint_presentation.md)**
 
 **To view Pivot Table Analysis, click [HERE](./cyclistic_case_study/pivot_table_analysis.md)**
-
-**Do you want to dive straight into the Analysis? click [HERE](./cyclistic_case_study/complete_analysis.md)**
 
 **You want to review Business questions or General questions in regards to this Project? click [HERE](./cyclistic_case_study/business_questions.md)**
 
