@@ -1,6 +1,8 @@
 # Google Data Analytics Professional Certification Capstone: Case Study
 
-This repository presents a capstone project derived from the Google Data Analytics Professional Certificate Course provided by Coursera. The project encompasses a well-defined objective, comprehensive data analysis, actionable recommendations, and innovative solutions tailored to Cyclistic, a bike-share company headquartered in Chicago. The insights gained from this analysis will empower Cyclistic’s marketing team to devise targeted strategies to encourage casual riders to subscribe to annual memberships. This strategic approach will contribute to enhancing customer retention and, consequently, revenue generation. 
+This repository presents a capstone project derived from the Google Data Analytics Professional Certificate Course provided by Coursera. This capstone project is part of the Google Data Analytics Professional Certificate and focuses on analyzing data from Cyclistic. The project encompasses a well-defined objective, comprehensive data analysis, actionable recommendations, and innovative solutions tailored to Cyclistic, a fictional bike-share company in Chicago. The goal is to use real-world data to identify trends and provide actionable insights to help the company improve its business strategy.
+
+The insights gained from this analysis will empower Cyclistic’s marketing team to devise targeted strategies to encourage casual riders to subscribe to annual memberships. This strategic approach will contribute to enhancing customer retention and, consequently, revenue generation. This project involves using key Analytical steps of Ask, Prepare, Process, Analyze, Share, and Act. 
 
 **To go straight to the PowerPoint presentation, click [HERE](./presentation/powerpoint_presentation.md)**
 
