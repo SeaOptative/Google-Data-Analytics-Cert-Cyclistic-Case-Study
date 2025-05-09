@@ -45,7 +45,7 @@ The insights gained from this analysis will help Cyclistic’s marketing team de
 * started_at and ended_at columns contains date-time data and formatted as YYYY-MM-DD HH:MM:SS format.
 * start_station_name, end_station_name, start_station_id, and end_station_id columns consists of station informations.
 * start_lat, start_lng, end_lat, and end_lng, these columns contain latitude and longitude data.
-* The member_casual column contains membership information, which is Member or Casual.
+* The member_casual column contains membership information: Member or Casual.
 
 
 ## Data Processing and Cleaning
@@ -66,7 +66,7 @@ The insights gained from this analysis will help Cyclistic’s marketing team de
 DELETE
  FROM full_year
 WHERE ride_id IS NULL or rideable_type IS NULL
-OR started_at IS NULL or ended_at IS NULL or
+ OR started_at IS NULL or ended_at IS NULL or
 start_station_name IS NULL or start_station_id IS NULL
 OR end_station_name IS NULL or end_station_id IS NULL
 OR start_lat IS NULL or start_lng IS NULL or end_lat IS NULL or
@@ -80,27 +80,27 @@ end_lng IS NULL OR members_casual IS NULL  ;
 
 CREATE TABLE full_year AS
 SELECT * FROM "jan-tripdata"
-UNION ALL
+ UNION ALL
 SELECT * FROM "feb-tripdata"
-UNION ALL
+ UNION ALL
 SELECT * FROM "mar-tripdata"
-UNION ALL
+ UNION ALL
 SELECT * FROM "apr-tripdata"
-UNION ALL
+ UNION ALL
 SELECT * FROM "may-tripdata"
-UNION ALL
+ UNION ALL
 SELECT * FROM "jun-tripdata"
-UNION ALL
+ UNION ALL
 SELECT * FROM "jul-tripdata"
-UNION ALL
+ UNION ALL
 SELECT * FROM "aug-tripdata"
-UNION ALL
+ UNION ALL
 SELECT * FROM "sep-tripdata"
-UNION ALL
+ UNION ALL
 SELECT * FROM "oct-tripdata"
-UNION ALL
+ UNION ALL
 SELECT * FROM "nov-tripdata"
-UNION ALL
+ UNION ALL
 SELECT * FROM "dec-tripdata";
 
 ```   
@@ -115,7 +115,7 @@ SELECT * FROM "dec-tripdata";
 
 ```{sql eval=FALSE, include=FALSE}
 SELECT
-members_casual, count(ride_id) AS Total_rides
+ members_casual, count(ride_id) AS Total_rides
 FROM full_year
 GROUP BY members_casual
 ```
@@ -124,63 +124,97 @@ GROUP BY members_casual
 
 ![Image: Total ride](./screenshots/total_ride.png)
 
+* 64% of Cyclistic's record of over 4.2 million rides over 12 months which is equivalent to 2,714,638 rides came from members.
+* The remaining 34% being casual riders which accounts for 1,530,084 rides.
+
 
 ### Monthly distribution of the number of rides
 
 ![Image: Monthly Distribution](./screenshots/ride_freq.png)
+
+* There is a rise in all members riding in the warmer months and a fall in the cooler ones.
+* The warmer months of spring and summer see a spike in casual ridership.
 
 
 ### Weekly distribution of the number of rides
 
 ![Image: Weekly Distribution](./screenshots/day_cas_vs_mem.png)
 
+* Members travel more throughout the week.
+* Casual ridership is at its highest on weekends compared to that of members, indicating that casual riders use the service more frequently on weekends.
+* This indicates that casual riders use the services for leisure purposes and members leaning towards official purposes or any purpose related to work, duty, or obligations.
+
+### Monthly distribution of the average ride duration
+
+![Image: Monthly ride length](./screenshots/mon_tim.png)
 
 ### Weekly distribution of the average ride duration
 
 ![Image: Weekly Distribution](./screenshots/week_dist.png)
 
+* Compared to members, casual riders ride less frequently yet take longer trips.
+* Casual riders average ride duration is almost twice that of the members. 
+* The average ride duration of both type of riders increase on weekends.
+* Over the span of 12 months, the average ride duration by casual riders increases, gets to a peak and then starts to drop during winter as compared to that of members which remains relatively flat.
+
+
+
+## Most frequent bike type 
+#### **Classic bike**
+
+![Image: Classic bike](./screenshots/class_bike.png)
+
+* For classic bikes, members account for 65% of the rides while casual riders is 35%.
+
+#### **Electric bike**
+
+![Image: Electric bike](./screenshots/elect_bike.png)
+
+* 37% of electric bike usage are casual riders while the other 63% are members.
+  
+#### **Classic Bike VS Electric Bike**
+
+![Image: Classic VS Electric bike](./screenshots/class_vs_elect_bike.png)
+
+* Overall, there are more classic bike rides throughtout the year than electric bike rides.
+* There is an overall increase in the months of April, May ,June, July, August and a drop starting from September, this is directly releated to a rise in all members riding in the warmer months and a fall in the cooler ones.
 
 ### Total ride by bike type and member type 
 
 ```{sql eval=FALSE, include=FALSE}
 SELECT members_casual, COUNT(*) AS total_rides,
-rideable_type,COUNT(*) AS ride_type
+ rideable_type,COUNT(*) AS ride_type
 FROM "full_year"
 GROUP BY members_casual, rideable_type
 ```
 
 ![Image: ride type](./screenshots/ride_type.png)
 
-
-### Average trip length per user type
-
-![Image: ride length](./screenshots/avg_ride_lngth.png)
-
-
-### General overview for Average ride length for each month, as well as Mean and Max Ride length
-
-![Image: General ride length](./screenshots/ride_length.png)
+* Both members and casual riders tend to prefer classic bikes over electric bikes.
+* There are 553,954 electric bikes and 976,130 classic bike rides for casual riders.
+* There were 928,684 member electric bike rides as opposed to 1,785,954 classic bike rides.
+* Demands for classic bikes rises during the months when the number of casual riders increases. 
 
 
 ### Most frequently used stations for starting and ending rides. 
 
-* **Top 10 start station**
+#### **Top 10 start station**
 ```{sql eval=FALSE, include=FALSE}
 SELECT start_station_name, COUNT(*) AS total_rides
-FROM "full_year"
+ FROM "full_year"
 WHERE start_station_name IS NOT NULL
-GROUP BY start_station_name
-ORDER BY total_rides DESC
+ GROUP BY start_station_name
+ ORDER BY total_rides DESC
 LIMIT 10;
 ```
 
 ![Image: Top 10 Start](./screenshots/top_10_start.png)
 
-* **Top 10 end station**
+#### **Top 10 end station**
   
 ```{sql eval=FALSE, include=FALSE}
 SELECT end_station_name, COUNT(*) AS total_rides
-FROM "full_year"
+ FROM "full_year"
 WHERE end_station_name IS NOT NULL
 GROUP BY end_station_name
 ORDER BY total_rides DESC
@@ -189,12 +223,14 @@ LIMIT 10;
 
 ![Image: Top 10 End](./screenshots/top_10_end.png)
 
-* **Most popular start stations for casual riders**
+* There is a similarity between the top 10 start stations and the top 10 end stations for all the total rides.
+
+#### **Most popular start stations for casual riders**
 
 ```{sql eval=FALSE, include=FALSE}
 SELECT 
 start_station_name, count(ride_id) AS Total_rides
-FROM full_year
+ FROM full_year
 WHERE members_casual = 'casual'
 GROUP BY start_station_name
 ORDER BY Total_rides DESC
@@ -205,12 +241,12 @@ LIMIT 10;
 
 ![Image: Popular Casual](./screenshots/pop_stat_mem.png)
 
-* **Most popular start stations for member riders**
+#### **Most popular start stations for member riders**
 
 ```{sql eval=FALSE, include=FALSE}
 SELECT 
 start_station_name, count(ride_id) AS Total_rides
-FROM full_year
+ FROM full_year
 WHERE members_casual = 'member'
 GROUP BY start_station_name
 ORDER BY Total_rides DESC
@@ -222,7 +258,7 @@ LIMIT 10;
 ![Image: Popular Member](./screenshots/pop_stat_rider.png)
 
 
-* **Most frequent routes start - end station**
+#### **Most frequent routes start - end station**
 
 ```{sql eval=FALSE, include=FALSE}
 SELECT
@@ -239,21 +275,47 @@ LIMIT 10;
 
 ![Image: Popular Route](./screenshots/pop_route.png)
 
+* Analysis indicates that the most favorite start stations for casual riders are different from those for members which indicates that this two group of riders have different locations where they tend to ride from. 
 
-## Most frequent bike type 
-* **Classic bike**
-
-![Image: Classic bike](./screenshots/class_bike.png)
-
-* **Electric bike**
-
-![Image: Electric bike](./screenshots/elect_bike.png)
-
-* **Classic Bike VS Electric Bike**
-
-![Image: Classic VS Electric bike](./screenshots/class_vs_elect_bike.png)
 
 
 ## Summary and Recommendations
 
+### Summary of Analysis
+
+ The key business question here was to identify the differences between usage pattern between the 2 types of rider (casual and annual members) of Cyclistic. Following an in-depth analysis, it was discovered that 64% of Cyclistic's record of over 4.2 million rides over 12 months came from members, with the remaining 34% being casual riders. Additionally, casual riders travel farther yet ride less frequently than members, the data shows that the average ride length of casual riders was always higher than that of members throughout the 12 months. 
+
+ Casual ridership is at its highest on weekends, indicating that casual riders use the service more frequently on weekends even while members travel more throughout the week. Another conclusion is that the warmer months of spring and summer see an increase in casual ridership. Additionally, it was observed that a rise in all members riding in the warmer months and a fall in the cooler ones. 
+
+ Additionally, classic bikes are typically preferred over electric bikes by both members and casual riders. According to the data, there are 553,954 electric bikes and 976,130 classic bike rides for casual riders and there were 928,684 member electric bike rides as opposed to 1,785,954 classic bike rides. The demand for classic bike rides is likewise directly correlated with the quantity of rides. Demands for classic bikes also rise during the months when the number of casual riders increases. 
+
+ Finally, the most popular routes, or start-to-end stations, are correlated with the similarity between the top 10 start stations and the top 10 end stations for all rides. However, upon closer inspection, it was found that the most favorite stations for casual riders are different from those for members which indicates that this two group of riders have different locations where they tend to ride from. 
+
+### Recommendations
+
+Based on my analysis, my top three recommendations will be: 
+•	Offer discounts on annual memberships for frequent casual riders and Promote weekend membership benefits to casual users.
+•	Increase bike availability and targetted on-ground marketing at locations most frequently used by casual riders.
+•	Run targeted marketing campaigns in warmer months.
+
+### Innovative Solutions
+
+•	**Targeted marketing campaigns -** The targeted marketing campaigns for Cyclistic can be designed to increase annual membership by focusing on specific strategies during the warmer months such as offering discounts,promoting weekendbenefits and increasing bike availability in locations most frequently used by riders. 
+
+•	**Personalized engagement -** Implementing personalized communication and engagement strategies to make members feel valued and connected to the Cyclistic community.
+
+•	**Loyalty program -** Introducing loyalty programs that reward long-term members with exclusive benefits, discounts, and special offers.
+
+•	**Enhanced services -** Continuously enhancing the services offered to members, such as improving bike availability, maintaining high-quality bikes, and ensuring convenient station locations.
+
+•	**Feedback mechanisms -** Establishing robust feedback mechanisms to gather insights from members about their experiences and preferences and using this feedback to make continuous improvements.
+
+• **Community building -** Creating a sense of community among members through events, social media engagement, and member-exclusive activities.
+
+***These strategies aim to convert occasional riders into full members, thereby boosting annual memberships and enhancing overall user engagement.***
+
 ## Conclusion
+
+  In conclusion, the objective was to understand engagement patterns of annual members and infrequent riders to boost annual memberships by converting occasional riders into full members. After analysis, data findings show differences in ride lengths between casual and member riders, with members having longer average ride lengths. Casual riders prefer classic bikes, especially in warmer months. Popular ride stations for both groups are listed, with Streeter Dr & Grand Ave being the most popular. As per these observations, recommendations include offering discounts on annual memberships for frequent casual riders, increasing bike availability at popular locations, and running targeted marketing campaigns in warmer months. In the case of future analysis, future analysis will focus on product enhancement, reasons for preference of classic bikes over electric bikes, improving station placement to boost sales, and understanding similarities between top 10 start and end stations. :smiley:
+
+
