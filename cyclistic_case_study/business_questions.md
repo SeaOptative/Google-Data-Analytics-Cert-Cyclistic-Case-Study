@@ -125,7 +125,3 @@ These benefits are designed to reward long-term members, enhance their overall e
   
 These metrics will help Cyclistic gauge the effectiveness of their loyalty program and make data-driven decisions to optimize future initiatives. 
 
-
-
-😊
-
